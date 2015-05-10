@@ -1,0 +1,43 @@
+!!! HTML
+%html
+%head
+  %title G-T-A
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+%body
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        = link_to "GTA", root_path, class: "navbar-brand"
+      %ul.nav.navbar-nav.navbar-right
+        - if current_user
+          %li= link_to current_user.full_name, user_path(current_user)
+          %li= link_to "Sign Out", sign_out_path
+        - else
+          %li= link_to "Sign Up", sign_up_path
+          %li= link_to "Sign In", sign_in_path
+  %br
+  %br
+  %br
+  %br
+  
+  .container
+
+    - if flash[:notice]
+      %p.alert.alert-success
+        = flash[:notice]
+
+    - if flash[:error]
+      %p.alert.alert-danger
+        = flash[:error]
+
+    = yield
+
+    %footer
+      %hr
+        = link_to "Home", "/"
+        |
+        .pull-right
+          Copyright @ G-T-A 2015
