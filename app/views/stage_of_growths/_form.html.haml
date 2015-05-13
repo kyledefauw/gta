@@ -1,0 +1,23 @@
+  = form_for @stage_of_growth, html: {class: "form-horizontal"} do |f|
+    = render partial: "/shared/errors", locals:{object: @stage_of_growth}
+  .row
+    .well.col-md-offset-2.col-md-8
+      .form-group
+        = f.label :stage, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :stage, class: "form-control"
+      .form-group
+        = f.label :plant_date, class: "col-md-4 control-label"
+        .col-md-8
+          = f.date_field :plant_date, class: "form-control"
+      .form-group
+        = f.label :pot_size, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :pot_size, class: "form-control"
+      .form-group
+        = f.label :grow_medium, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :grow_medium, class: "form-control"
+      .form-group
+        .col-md-offset-4.col-md-4
+          = f.submit class: "btn btn-success form-control"
