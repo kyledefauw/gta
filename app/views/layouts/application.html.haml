@@ -22,7 +22,7 @@
   %br
   %br
   %br
-  
+
   .container
 
     - if flash[:notice]
@@ -37,7 +37,8 @@
 
     %footer
       %hr
-        = link_to "Home", "/"
+        = link_to "Home", root_path
         |
+        = link_to "Gardens", gardens_path
         .pull-right
           Copyright @ G-T-A 2015
