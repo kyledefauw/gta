@@ -1,0 +1,9 @@
+.page-header
+  = link_to "New Plant", new_crop_plant_path, class: "btn btn-success pull-right"
+  %h2 List of Plants
+
+- @plants.each do |plant|
+
+  = link_to plant.strain_name, garden_crops_path(crop, @garden)
+  = plant.sex
+  = plant.from

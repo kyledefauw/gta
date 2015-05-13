@@ -48,7 +48,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:strain_name, :sex, :from)
+    params.require(:plant).permit(:strain_name, :sex, :from, :crop_id)
   end
 
   def find_and_set_plant

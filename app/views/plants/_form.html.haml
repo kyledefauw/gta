@@ -1,0 +1,19 @@
+  = form_for [@crop, @plant], html: {class: "form-horizontal"} do |f|
+    = render partial: "/shared/errors", locals:{object: @plant}
+  .row
+    .well.col-md-offset-2.col-md-8
+      .form-group
+        = f.label :strain_name, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :strain_name, class: "form-control"
+      .form-group
+        = f.label :sex, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :sex, class: "form-control"
+      .form-group
+        = f.label :from, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :from, class: "form-control"
+      .form-group
+        .col-md-offset-4.col-md-4
+          = f.submit class: "btn btn-success form-control"
