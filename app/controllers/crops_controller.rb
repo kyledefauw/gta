@@ -3,7 +3,8 @@ class CropsController < ApplicationController
   before_action :find_and_set_crop
 
   def index
-    @crops = @garden.crops.all
+    @crops = @garden.crops
+    @crop = @garden.crops.new
   end
 
   def new
@@ -48,11 +49,11 @@ class CropsController < ApplicationController
   private
 
   def crop_params
-    params.require(:crop).permit(:name)
+    params.require(:crop).permit(:name, :garden_id)
   end
 
   def find_and_set_crop
     @garden = Garden.find(params[:garden_id])
   end
 
-  end
+end
