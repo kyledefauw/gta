@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :plants
   end
 
+  resources :plants do
+    resources :stage_of_growths
+  end
+
   get 'sign-up', to: 'registrations#new'
   post 'sign-up', to: 'registrations#create'
   get 'sign-in', to: 'sessions#new'
