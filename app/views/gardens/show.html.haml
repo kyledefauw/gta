@@ -1,0 +1,29 @@
+.page-header
+  .pull-right
+    = link_to 'Edit Garden', edit_garden_path(@garden), class: "btn btn-info"
+  %h1= @garden.name
+
+.row
+  .well.col-md-offset-3.col-md-6
+    %table
+      %tbody
+        %tr
+          %td.col-md-2
+          %td.col-md-2
+            %h4= @garden.name
+          %td.col-md-2
+            %center= link_to "Change", edit_garden_path(@garden), class: "btn btn-warning"
+        %tr
+          %td.col-md-2
+            %h4 # of Crops
+          %td.col-md-2
+            %center= link_to @garden.crops.count, garden_crops_path(@garden)
+          %td.col-md-2
+            %center= link_to "", new_garden_crop_path(@garden), class: "glyphicon glyphicon-plus"
+        -# %tr
+        -#   %td.col-md-2
+        -#     %h4 # of Plants
+        -#   %td.col-md-2
+        -#     %center= link_to @crop.plants.count, garden_plants_path(@garden)
+        -#   %td.col-md-2
+        -#     %center= link_to "", new_crop_plant_path(@garden), class: "glyphicon glyphicon-plus"

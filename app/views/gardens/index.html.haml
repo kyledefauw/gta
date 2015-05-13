@@ -1,0 +1,7 @@
+.page-header
+  = link_to "New Garden", new_garden_path, class: "btn btn-success pull-right"
+  %h2 List of Gardens
+
+- @gardens.each do |garden|
+
+  = link_to garden.name, garden_path(garden)
