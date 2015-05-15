@@ -4,7 +4,6 @@ class CropsController < ApplicationController
 
   def index
     @crops = @garden.crops
-    @crop = @garden.crops.new
   end
 
   def new
