@@ -1,0 +1,19 @@
+.page-header
+  = link_to "New Feed", new_plant_feeding_path, class: "btn btn-success pull-right"
+  %h2 List of Plant Feedings
+
+%table.table.striped
+  %thead
+    %tr
+      %th Water Amount
+      %th Nutrients Added
+      %th PPM Level
+      %th PH level
+
+  %tbody
+    - @feedings.each do |feeding|
+      %tr
+        %td= link_to feeding.water_amount, plant_feeding_path(@plant, feeding)
+        %td= feeding.nutrients_added
+        %td= feeding.ppm_level
+        %td= feeding.ph_level

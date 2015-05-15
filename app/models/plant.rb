@@ -3,5 +3,6 @@ class Plant < ActiveRecord::Base
 
   belongs_to :crop
   has_many :stage_of_growths
+  has_many :feedings
 
 end

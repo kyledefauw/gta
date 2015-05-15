@@ -1,0 +1,18 @@
+.page-header
+  .pull-right
+    =link_to "Edit", edit_plant_feeding_path(@plant, @feeding), class: "btn btn-info"
+  %h2 Feeding
+
+%dl.dl-horizontal
+  %dt Plant ID #
+  %dd= @feeding.plant_id
+  %dt Stage
+  %dd= @feeding.water_amount
+  %dt Plant Date
+  %dd= @feeding.nutrients_added
+  %dt Pot Size
+  %dd= @feeding.ppm_level
+  %dt Grow Medium
+  %dd= @feeding.ph_level
+  %dt Last Feeding
+  %dd= @feeding.created_at.strftime("%a, %B %d, %Y, at %l:%M %p")

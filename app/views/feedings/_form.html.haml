@@ -1,0 +1,23 @@
+= form_for [@plant, @feeding], html: {class: "form-horizontal"} do |f|
+  = render partial: "/shared/errors", locals:{object: @feeding}
+  .row
+    .well.col-md-offset-2.col-md-8
+      .form-group
+        = f.label :water_amount, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :water_amount, class: "form-control"
+      .form-group
+        = f.label :nutrients_added, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :nutrients_added, class: "form-control"
+      .form-group
+        = f.label :ppm_level, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :ppm_level, class: "form-control"
+      .form-group
+        = f.label :ph_level, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :ph_level, class: "form-control"
+      .form-group
+        .col-md-offset-4.col-md-4
+          = f.submit class: "btn btn-success form-control"
