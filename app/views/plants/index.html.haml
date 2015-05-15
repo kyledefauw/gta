@@ -2,8 +2,21 @@
   = link_to "New Plant", new_crop_plant_path, class: "btn btn-success pull-right"
   %h2 List of Plants
 
-- @plants.each do |plant|
+%table.table.striped
+  %thead
+    %tr
+      %th ID #
+      %th Strain Name
+      %th Sex
+      %th From
+      %th Stage of Growth
 
-  = link_to plant.strain_name, garden_crops_path(crop, @garden)
-  = plant.sex
-  = plant.from
+  %tbody
+    - @plants.each do |plant|
+      %tr
+        %td= plant.id
+        %td= link_to plant.strain_name, crop_plant_path(@crop, plant)
+        %td= plant.sex
+        %td= plant.from
+        - @stage_of_growths.each do |stage_of_growth|
+          %td= link_to stage_of_growth.stage, plant_stage_of_growths_path(plant)

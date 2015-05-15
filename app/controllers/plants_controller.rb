@@ -4,6 +4,7 @@ class PlantsController < ApplicationController
 
   def index
     @plants = @crop.plants.all
+    @stage_of_growths = StageOfGrowth.all
   end
 
   def new
