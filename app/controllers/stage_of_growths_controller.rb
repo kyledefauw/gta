@@ -1,4 +1,4 @@
-class StageofGrowthsController < ApplicationController
+class StageOfGrowthsController < ApplicationController
 
   before_action :find_and_set_stage_of_growth
 
@@ -48,11 +48,11 @@ class StageofGrowthsController < ApplicationController
   private
 
   def stage_of_growth_params
-    params.require(:stage_of_growth).permit(:stage, :plant_date, :pot_size, :grow_medium)
+    params.require(:stage_of_growth).permit(:stage, :plant_date, :pot_size, :grow_medium, :plant_id)
   end
 
   def find_and_set_stage_of_growth
-    @plant = plant.find(params[:plant_id])
+    @plant = Plant.find(params[:plant_id])
   end
 
 end

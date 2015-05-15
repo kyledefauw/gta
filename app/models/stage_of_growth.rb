@@ -1,5 +1,6 @@
 class StageOfGrowth < ActiveRecord::Base
-  validates :stage, :date, :presence => true
+
+  validates :stage, :plant_date, :presence => true
 
   belongs_to :plant
 
