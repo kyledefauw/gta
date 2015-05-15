@@ -1,7 +1,7 @@
 .page-header
-  = link_to "New Plant", new_crop_plant_path(@crop), class: "btn btn-success pull-right"
   %h2 List of Crops
 
 - @crops.each do |crop|
 
-  = link_to crop.name, garden_crops_path(crop, @garden)
+  = link_to crop.name, garden_crop_path(@garden, crop)
+  %hr
