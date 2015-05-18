@@ -47,10 +47,16 @@ class PlantsController < ApplicationController
     redirect_to crop_plants_path
   end
 
+  def copy
+    @plant = @crop.plants.find(params[:id])
+    @dup_plant = @plant.amoeba_dup
+    render 'new'
+  end
+
   private
 
   def plant_params
-    params.require(:plant).permit(:strain_name, :sex, :from, :crop_id)
+    params.require(:plant).permit(:strain_name, :sex, :from, :crop_id, :id_number)
   end
 
   def find_and_set_plant

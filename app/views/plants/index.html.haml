@@ -2,22 +2,27 @@
   = link_to "New Plant", new_crop_plant_path, class: "btn btn-success pull-right"
   %h2 List of Plants
 
+
 %table.table.striped
   %thead
     %tr
-      %th ID #
-      %th Strain Name
-      %th Sex
-      %th From
-      %th Stage of Growth
-      %th Last Feeding
+      %th.text-center ID #
+      %th.text-center Strain Name
+      %th.text-center Sex
+      %th.text-center From
+      %th.text-center Stage of Growth
+      %th.text-center Last Feeding
+      %th.text-center Notes
 
   %tbody
     - @plants.each do |plant|
       %tr
-        %td= plant.id
-        %td= link_to plant.strain_name, crop_plant_path(@crop, plant)
-        %td= plant.sex
-        %td= plant.from
-        %td= link_to @latest_stage.stage, plant_stage_of_growths_path(plant)
-        %td= link_to @last_fed.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_feedings_path(plant)
+        %td.text-center= plant.id_number
+        %td.text-center= link_to plant.strain_name, crop_plant_path(@crop, plant)
+        %td.text-center= plant.sex
+        %td.text-center= plant.from
+        %td.text-center= link_to @latest_stage.stage, plant_stage_of_growths_path(plant)
+        %td.text-center= link_to @last_fed.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_feedings_path(plant)
+        %td
+          %td= link_to "", plant_general_notes_path(plant), class: "glyphicon glyphicon-home"
+          %td= link_to "", new_plant_general_note_path(plant), class: "glyphicon glyphicon-plus"

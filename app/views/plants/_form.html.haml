@@ -15,5 +15,9 @@
         .col-md-8
           = f.text_field :from, class: "form-control"
       .form-group
+        = f.label :id_number, class: "col-md-4 control-label"
+        .col-md-8
+          = f.text_field :id_number, class: "form-control"
+      .form-group
         .col-md-offset-4.col-md-4
           = f.submit class: "btn btn-success form-control"
