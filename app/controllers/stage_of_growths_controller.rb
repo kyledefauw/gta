@@ -8,6 +8,7 @@ class StageOfGrowthsController < ApplicationController
 
   def new
     @stage_of_growth = @plant.stage_of_growths.new
+    # @grow_media = @plant.grow_medium.new(params.require(:grow_media).permit(:brand, :nutrients_added, :plant_id))
   end
 
   def create

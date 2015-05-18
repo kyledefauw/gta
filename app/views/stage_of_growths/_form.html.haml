@@ -14,10 +14,17 @@
         = f.label :pot_size, class: "col-md-4 control-label"
         .col-md-8
           = f.text_field :pot_size, class: "form-control"
-      .form-group
-        = f.label :grow_medium, class: "col-md-4 control-label"
-        .col-md-8
-          = f.text_field :grow_medium, class: "form-control"
+
+      = fields_for :grow_medium do |g|
+        .form-group
+          = g.label :brand, class: "col-md-4 control-label"
+          .col-md-8
+            = g.text_field :brand, class: "form-control"
+        .form-group
+          = g.label :nutrients_added, class: "col-md-4 control-label"
+          .col-md-8
+            = g.text_field :nutrients_added, class: "form-control"
+
       .form-group
         .col-md-offset-4.col-md-4
           = f.submit class: "btn btn-success form-control"
