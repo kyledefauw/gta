@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :crops do
     resources :plants
+      member do
+        get 'copy'
+      end
   end
 
   resources :plants do
@@ -16,6 +19,10 @@ Rails.application.routes.draw do
 
   resources :plants do
     resources :feedings
+  end
+
+  resources :plants do
+    resources :general_notes
   end
 
   get 'sign-up', to: 'registrations#new'

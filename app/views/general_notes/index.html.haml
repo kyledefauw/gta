@@ -1,0 +1,13 @@
+.page-header
+  = link_to "New Note", new_plant_general_note_path, class: "btn btn-success pull-right"
+  %h2 List of Plant Feedings
+
+%table.table.striped
+  %thead
+    %tr
+      %th Note
+
+  %tbody
+    - @general_notes.each do |general_note|
+      %tr
+        %td= link_to general_note.water_amount, plant_general_note_path(@plant, general_note)
