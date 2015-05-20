@@ -1,0 +1,9 @@
+.page-header
+  .pull-right
+    =link_to "Edit", edit_plant_general_note_path(@plant, @general_note), class: "btn btn-info"
+  %h2
+    = "#" + @plant.id_number + " " + @plant.strain_name + " - Notes"
+
+%dl.dl-horizontal
+  %dt Note
+  %dd= @general_note.notes
