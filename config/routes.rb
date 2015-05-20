@@ -13,15 +13,15 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :plants do
+  resources :tasks do
     resources :stage_of_growths
   end
 
-  resources :plants do
+  resources :tasks do
     resources :feedings
   end
 
-  resources :plants do
+  resources :tasks do
     resources :general_notes
   end
 

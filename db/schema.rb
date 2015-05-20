@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515212329) do
+ActiveRecord::Schema.define(version: 20150520033439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150515212329) do
     t.string   "nutrients_added"
     t.string   "ppm_level"
     t.string   "ph_level"
-    t.integer  "plant_id"
+    t.integer  "task_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150515212329) do
 
   create_table "general_notes", force: :cascade do |t|
     t.text     "notes"
-    t.integer  "plant_id"
+    t.integer  "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,7 +63,16 @@ ActiveRecord::Schema.define(version: 20150515212329) do
     t.datetime "plant_date"
     t.string   "pot_size"
     t.text     "grow_medium"
-    t.integer  "plant_id"
+    t.integer  "task_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.boolean  "topped"
+    t.boolean  "trimmed"
+    t.boolean  "staked"
+    t.boolean  "clipped"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
