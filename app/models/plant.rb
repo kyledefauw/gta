@@ -3,5 +3,8 @@ class Plant < ActiveRecord::Base
 
   belongs_to :crop
   has_many :plant_tasks
+  has_many :plant_images
+
+  mount_uploader :image, ImageUploader
 
 end
