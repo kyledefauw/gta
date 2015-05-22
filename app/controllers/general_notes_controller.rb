@@ -29,7 +29,7 @@ class GeneralNotesController < ApplicationController
   end
 
   def update
-    @general_note = @plant_task.general_notess.find(params[:id])
+    @general_note = @plant_task.general_notes.find(params[:id])
     if @general_note.update(general_note_params)
       flash[:notice] = 'General Notes successfully updated!'
       redirect_to plant_task_general_notes_path

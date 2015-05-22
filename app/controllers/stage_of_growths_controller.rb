@@ -53,7 +53,7 @@ class StageOfGrowthsController < ApplicationController
   end
 
   def find_and_set_stage_of_growth
-    @plant_task = PlantTask.find(params[:plant_plant_task_id])
+    @plant_task = PlantTask.find(params[:plant_task_id])
   end
 
 end
