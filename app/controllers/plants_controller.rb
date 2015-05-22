@@ -47,12 +47,6 @@ class PlantsController < ApplicationController
     redirect_to crop_plants_path
   end
 
-  def copy
-    @plant = @crop.plants.find(params[:id])
-    @dup_plant = @plant.amoeba_dup
-    render 'new'
-  end
-
   private
 
   def plant_params

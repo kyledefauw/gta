@@ -21,8 +21,8 @@
         %td.text-center= link_to plant.strain_name, crop_plant_path(@crop, plant)
         %td.text-center= plant.sex
         %td.text-center= plant.from
-        %td.text-center= link_to @latest_stage.stage, plant_stage_of_growths_path(plant)
-        %td.text-center= link_to @last_fed.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_feedings_path(plant)
+        %td.text-center= link_to @latest_stage.stage, plant_task_stage_of_growths_path(plant)
+        %td.text-center= link_to @last_fed.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_task_feedings_path(plant)
         %td
-          %td= link_to "", plant_general_notes_path(plant), class: "glyphicon glyphicon-home"
-          %td= link_to "", new_plant_general_note_path(plant), class: "glyphicon glyphicon-plus"
+          %td= link_to "", plant_task_general_notes_path(plant), class: "glyphicon glyphicon-home"
+          %td= link_to "", new_plant_task_general_note_path(plant), class: "glyphicon glyphicon-plus"

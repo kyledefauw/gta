@@ -1,4 +1,4 @@
-class Task < ActiveRecord::Base
+class PlantTask < ActiveRecord::Base
 
   belongs_to :plant
   has_many :feedings

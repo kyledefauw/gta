@@ -3,56 +3,56 @@ class GeneralNotesController < ApplicationController
   before_action :find_and_set_general_note
 
   def index
-    @general_notes = @task.general_notes.all
+    @general_notes = @plant_task.general_notes.all
   end
 
   def new
-    @general_note = @task.general_notes.new
+    @general_note = @plant_task.general_notes.new
   end
 
   def create
-    @general_note = @task.general_notes.new(general_note_params)
+    @general_note = @plant_task.general_notes.new(general_note_params)
     if @general_note.save
       flash[:notice] = 'General Note successfully added'
-      redirect_to task_general_notes_path
+      redirect_to plant_task_general_notes_path
     else
       render :new
     end
   end
 
   def edit
-    @general_note = @task.general_notes.find(params[:id])
+    @general_note = @plant_task.general_notes.find(params[:id])
   end
 
   def show
-    @general_note = @task.general_notes.find(params[:id])
+    @general_note = @plant_task.general_notes.find(params[:id])
   end
 
   def update
-    @general_note = @task.general_notess.find(params[:id])
+    @general_note = @plant_task.general_notess.find(params[:id])
     if @general_note.update(general_note_params)
       flash[:notice] = 'General Notes successfully updated!'
-      redirect_to task_general_notes_path
+      redirect_to plant_task_general_notes_path
     else
       render :edit
     end
   end
 
   def destroy
-    general_note = @task.general_notes.find(params[:id])
+    general_note = @plant_task.general_notes.find(params[:id])
     general_note.destroy
     flash[:error] = "General Notes was deleted"
-    redirect_to task_general_note_path
+    redirect_to plant_task_general_note_path
   end
 
   private
 
   def general_note_params
-    params.require(:general_note).permit(:notes, :task_id)
+    params.require(:general_note).permit(:notes, :plant_task_id)
   end
 
   def find_and_set_general_note
-    @task = task.find(params[:task_id])
+    @plant_task = PlantTask.find(params[:plant_task_id])
   end
 
 end

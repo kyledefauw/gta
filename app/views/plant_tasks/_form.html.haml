@@ -1,0 +1,69 @@
+= form_for [@plant, @plant_task], html: {class: "form-horizontal"} do |t|
+  = render partial: "/shared/errors", locals:{object: @plant_task}
+  .row
+    .well.col-md-offset-2.col-md-8
+      .form-group
+        = t.label :topped, class: "col-md-4 control-label"
+        .col-md-8
+          = t.checkbox :topped, class: "form-control"
+      .form-group
+        = t.label :trimmed, class: "col-md-4 control-label"
+        .col-md-8
+          = t.checkbox :trimmed, class: "form-control"
+      .form-group
+        = t.label :staked, class: "col-md-4 control-label"
+        .col-md-8
+          = t.checkbox :staked, class: "form-control"
+      .form-group
+        = t.label :clipped, class: "col-md-4 control-label"
+        .col-md-8
+          = t.checkbox :clipped, class: "form-control"
+
+    .well.col-md-offset-2.col-md-8
+      = fields_for :feeding do |f|
+        .form-group
+          = f.label :water_amount, class: "col-md-4 control-label"
+          .col-md-8
+            = f.text_field :water_amount, class: "form-control"
+        .form-group
+          = f.label :nutrients_added, class: "col-md-4 control-label"
+          .col-md-8
+            = f.text_field :nutrients_added, class: "form-control"
+        .form-group
+          = f.label :ppm_level, class: "col-md-4 control-label"
+          .col-md-8
+            = f.text_field :ppm_level, class: "form-control"
+        .form-group
+          = f.label :ph_level, class: "col-md-4 control-label"
+          .col-md-8
+            = f.text_field :ph_level, class: "form-control"
+
+    .well.col-md-offset-2.col-md-8
+      = fields_for :stage_of_growth do |s|
+        .form-group
+          = s.label :stage, class: "col-md-4 control-label"
+          .col-md-8
+            = s.text_field :stage, class: "form-control"
+        .form-group
+          = s.label :plant_date, class: "col-md-4 control-label"
+          .col-md-8
+            = s.date_field :plant_date, class: "form-control"
+        .form-group
+          = s.label :pot_size, class: "col-md-4 control-label"
+          .col-md-8
+            = s.text_field :pot_size, class: "form-control"
+
+    .well.col-md-offset-2.col-md-8
+      = fields_for :grow_medium do |g|
+        .form-group
+          = g.label :brand, class: "col-md-4 control-label"
+          .col-md-8
+            = g.text_field :brand, class: "form-control"
+        .form-group
+          = g.label :nutrients_added, class: "col-md-4 control-label"
+          .col-md-8
+            = g.text_field :nutrients_added, class: "form-control"
+
+      .form-group
+        .col-md-offset-4.col-md-4
+          = f.submit class: "btn btn-success form-control"
