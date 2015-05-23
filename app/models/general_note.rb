@@ -2,6 +2,6 @@ class GeneralNote < ActiveRecord::Base
 
   validates :notes, :presence => true
 
-  belongs_to :plant_task
+  belongs_to :plant
 
 end

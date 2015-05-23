@@ -1,4 +1,5 @@
 .page-header
+  = link_to "Upload New Image", new_plant_plant_image_path(@plant), class: "btn btn-success pull-right"
   %h2 Gallery of Images
 
 - @plant_images.each do |plant_images|

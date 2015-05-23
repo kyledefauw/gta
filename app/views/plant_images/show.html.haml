@@ -1,1 +1,6 @@
-= image_tag plant.plant_picture_url.to_s
+.page-header
+  .pull-right
+    =link_to "Edit", edit_plant_plant_image_path(@plant, @plant_image), class: "btn btn-info"
+  %h2 Image
+
+= image_tag @plant.plant_picture_url.to_s

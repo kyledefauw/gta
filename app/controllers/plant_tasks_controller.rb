@@ -26,6 +26,12 @@ class PlantTasksController < ApplicationController
 
   def show
     @plant_task = @plant.plant_tasks.find(params[:id])
+    @feeding = Feeding.find(params[:id])
+    @general_note = GeneralNote.find(params[:id])
+    # @plant_image = PlantImage.find(params[:id])
+
+
+    # @feeding = @plant_task.feedings.find(params.require(:feeding).permit(:water_amount, :nutrients_added, :ppm_level, :ph_level))
   end
 
   def update

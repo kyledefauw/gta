@@ -5,7 +5,6 @@ class PlantsController < ApplicationController
   def index
     @plants = @crop.plants.all
     @latest_stage = StageOfGrowth.last
-    @last_fed = Feeding.last
   end
 
   def new
