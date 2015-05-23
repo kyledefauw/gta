@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522062537) do
+ActiveRecord::Schema.define(version: 20150523044015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 20150522062537) do
   end
 
   create_table "plant_images", force: :cascade do |t|
-    t.string   "plant_image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "plant_picture"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "plant_tasks", force: :cascade do |t|
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150522062537) do
     t.boolean  "clipped"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "plant_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -78,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150522062537) do
     t.datetime "plant_date"
     t.string   "pot_size"
     t.text     "grow_medium"
-    t.integer  "plant_task_id"
+    t.integer  "plant_id"
   end
 
   create_table "users", force: :cascade do |t|

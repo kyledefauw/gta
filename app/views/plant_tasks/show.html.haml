@@ -1,0 +1,41 @@
+.page-header
+  .pull-right
+    =link_to "Edit", edit_plant_plant_task_path(@plant, @plant_task), class: "btn btn-info"
+  %h2
+    = "Task record from #{@plant_task.created_at.strftime("%a, %B %d, %Y, at %l:%M %p")}"
+
+%dl.dl-horizontal
+  %dt Topped
+  %dd
+    - if @plant_task.topped == true
+      Yes
+  %dt Trimmed
+  %dd
+    - if @plant_task.trimmed == true
+      Yes
+  %dt Staked
+  %dd
+    - if @plant_task.staked == true
+      Yes
+  %dt Clipped
+  %dd
+    - if @plant_task.clipped == true
+      Yes
+
+%dl.dl-horizontal
+  %dt Water Amount
+  %dd= @feeding.water_amount
+  %dt Nutrients Added
+  %dd= @feeding.nutrients_added
+  %dt PPM Level
+  %dd= @feeding.ppm_level
+  %dt Ph Level
+  %dd= @feeding.ph_level
+
+%dl.dl-horizontal
+  %dt Notes
+  %dd= @general_note.notes
+
+-# %dl.dl-horizontal
+-#   %dt Picture
+-#   %dd= @plant_image.plant_image

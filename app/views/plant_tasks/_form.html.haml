@@ -5,19 +5,19 @@
       .form-group
         = t.label :topped, class: "col-md-4 control-label"
         .col-md-8
-          = t.checkbox :topped, class: "form-control"
+          = t.check_box :topped, class: "form-control"
       .form-group
         = t.label :trimmed, class: "col-md-4 control-label"
         .col-md-8
-          = t.checkbox :trimmed, class: "form-control"
+          = t.check_box :trimmed, class: "form-control"
       .form-group
         = t.label :staked, class: "col-md-4 control-label"
         .col-md-8
-          = t.checkbox :staked, class: "form-control"
+          = t.check_box :staked, class: "form-control"
       .form-group
         = t.label :clipped, class: "col-md-4 control-label"
         .col-md-8
-          = t.checkbox :clipped, class: "form-control"
+          = t.check_box :clipped, class: "form-control"
 
     .well.col-md-offset-2.col-md-8
       = fields_for :feeding do |f|
@@ -39,31 +39,19 @@
             = f.text_field :ph_level, class: "form-control"
 
     .well.col-md-offset-2.col-md-8
-      = fields_for :stage_of_growth do |s|
+      = fields_for :general_notes do |g|
         .form-group
-          = s.label :stage, class: "col-md-4 control-label"
+          = g.label "Notes", class: "col-md-4 control-label"
           .col-md-8
-            = s.text_field :stage, class: "form-control"
-        .form-group
-          = s.label :plant_date, class: "col-md-4 control-label"
-          .col-md-8
-            = s.date_field :plant_date, class: "form-control"
-        .form-group
-          = s.label :pot_size, class: "col-md-4 control-label"
-          .col-md-8
-            = s.text_field :pot_size, class: "form-control"
+            = g.text_area :note, class: "form-control"
 
     .well.col-md-offset-2.col-md-8
-      = fields_for :grow_medium do |g|
+      = fields_for :plant_image do |i|
         .form-group
-          = g.label :brand, class: "col-md-4 control-label"
+          = i.label :plant_image, class: "col-md-4 control-label"
           .col-md-8
-            = g.text_field :brand, class: "form-control"
-        .form-group
-          = g.label :nutrients_added, class: "col-md-4 control-label"
-          .col-md-8
-            = g.text_field :nutrients_added, class: "form-control"
+            = i.file_field :plant_image, class: "form-control"
 
-      .form-group
-        .col-md-offset-4.col-md-4
-          = f.submit class: "btn btn-success form-control"
+  .form-group
+    .col-md-offset-4.col-md-4
+      = t.submit class: "btn btn-success form-control"

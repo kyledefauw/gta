@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     resources :plant_tasks
   end
 
+  resources :plants do
+    resources :plant_images
+  end
+
   resources :plant_tasks do
     resources :stage_of_growths
   end

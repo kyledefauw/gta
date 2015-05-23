@@ -48,7 +48,7 @@ class PlantImagesController < ApplicationController
   private
 
   def plant_image_params
-    params.require(:plant_image).permit(:image, :plant_id)
+    params.require(:plant_image).permit(:plant_picture, :plant_id)
   end
 
   def find_and_set_plant_image

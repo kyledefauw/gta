@@ -1,0 +1,7 @@
+.page-header
+  %h2 Gallery of Images
+
+- @plant_images.each do |plant_images|
+
+  = link_to plant_images.plant_picture, plant_plant_image_path(@plant, plant_images)
+  %hr

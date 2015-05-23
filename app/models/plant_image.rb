@@ -1,6 +1,6 @@
 class PlantImage < ActiveRecord::Base
 
-  validates :plant_image, :presence => true
+  validates :plant_picture, :presence => true
 
   belongs_to :plant
 
