@@ -11,6 +11,8 @@
     .container
       .navbar-header
         = link_to "GTA", root_path, class: "navbar-brand"
+      %ul.nav.navbar-nav
+        %li= link_to "Tips", tips_path        
       %ul.nav.navbar-nav.navbar-right
         - if current_user
           %li= link_to current_user.full_name, user_path(current_user)
