@@ -4,4 +4,6 @@ class Garden < ActiveRecord::Base
   has_many :crops, dependent: :destroy
   has_many :plants, through: :crops
 
+  has_and_belongs_to_many :user
+
 end

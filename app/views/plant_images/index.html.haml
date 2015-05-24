@@ -4,5 +4,5 @@
 
 - @plant_images.each do |plant_images|
 
-  = link_to plant_images.plant_picture, plant_plant_image_path(@plant, plant_images)
+  = link_to image_tag(plant_images.plant_picture), plant_plant_image_path(@plant, plant_images)
   %hr

@@ -5,12 +5,13 @@
     = @stage_of_growth.stage
 
 %dl.dl-horizontal
+  %dt Plant ID #
+  %dd= @plant.id_number
   %dt Stage
   %dd= @stage_of_growth.stage
   %dt Plant Date
-  %dd= @stage_of_growth.plant_date
+  %dd= @stage_of_growth.plant_date.strftime("%a, %B %d, %Y, at %l:%M %p")
   %dt Pot Size
   %dd= @stage_of_growth.pot_size
   %dt Grow Medium
-  %dt Plant ID #
-  %dd= @stage_of_growth.plant_id
+  -# %dd= "#{@grow_medium.brand} + #{@grow_medium.nutrients_added}"

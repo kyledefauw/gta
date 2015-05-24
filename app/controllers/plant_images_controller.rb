@@ -26,6 +26,8 @@ class PlantImagesController < ApplicationController
 
   def show
     @plant_image = @plant.plant_images.find(params[:id])
+    @plant_images = @plant.plant_images.all
+    @crop = Crop.find(params[:id])
   end
 
   def update

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/soil', to: 'tips#soil'
   get '/hydroponics', to: 'tips#hydroponics'
 
-
+  resources :users
 
   resources :gardens do
     resources :crops

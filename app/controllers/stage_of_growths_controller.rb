@@ -27,6 +27,7 @@ class StageOfGrowthsController < ApplicationController
 
   def show
     @stage_of_growth = @plant.stage_of_growths.find(params[:id])
+    # @grow_medium = GrowMedia.find(params[:id])
   end
 
   def update

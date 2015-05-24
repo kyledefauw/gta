@@ -3,7 +3,7 @@ class CropsController < ApplicationController
   before_action :find_and_set_crop
 
   def index
-    @crops = @garden.crops
+    @crops = @garden.crops.all
   end
 
   def new

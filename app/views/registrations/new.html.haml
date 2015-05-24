@@ -3,10 +3,10 @@
     .form-group.page-header
       %h1 Sign Up - Grow Tracker App
 
-      - if @user.errors.any?
-        .text-danger
-          -@user.errors.full_messages.each do |message|
-            = message
+    - if @user.errors.any?
+      .text-danger
+        -@user.errors.full_messages.each do |message|
+          = message
 
     = form_for @user, url: sign_up_path do |f|
 

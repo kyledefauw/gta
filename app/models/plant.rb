@@ -1,5 +1,5 @@
 class Plant < ActiveRecord::Base
-  attr_accessor :plant_picture
+  attr_accessor :plant_picture, :crop_id
   validates :strain_name, :presence => true
 
   belongs_to :crop

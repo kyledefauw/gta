@@ -3,6 +3,9 @@
   %h2 List of Gardens
 
 - @gardens.each do |garden|
-
-  = link_to garden.name, garden_path(garden)
-  %hr
+  %h4= link_to garden.name, garden_path(garden)
+  %dl
+    %dt Crops
+    %dd
+      - garden.crops.each do |crop|
+        %p= link_to crop.name, crop_plants_path(crop)

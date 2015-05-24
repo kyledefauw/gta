@@ -7,29 +7,27 @@
   %thead
     %tr
       %th.text-center.col-md-1 ID #
-      %th.text-center.col-md-3 Strain Name
-      %th.text-center.col-md-2 Sex
-      %th.text-center.col-md-2 From
-      %th.text-center.col-md-1 Plant Tasks
-      %th.text-center.col-md-1 Stage Of Growth
-      %th.text-center.col-md-1 Notes
-      %th.text-center.col-md-1 Images
+      %th.text-center.col-md-2 Strain Name
+      %th.text-center.col-md-1 Sex
+      %th.text-center.col-md-1 From
+      %th.text-center.col-md-1{:colspan => 2} Plant Tasks
+      %th.text-center.col-md-1{:colspan => 2} Stage Of Growth
+      %th.text-center.col-md-1{:colspan => 2} Notes
+      %th.text-center.col-md-1{:colspan => 2} Pictures
 
 
   %tbody
     - @plants.each do |plant|
       %tr
         %td.text-center.col-md-1= plant.id_number
-        %td.text-center.col-md-3= link_to plant.strain_name, crop_plant_path(@crop, plant)
-        %td.text-center.col-md-2= plant.sex
-        %td.text-center.col-md-2= plant.from
-        %td.col-md-1
-          %td= link_to "", plant_plant_tasks_path(plant), class: "glyphicon glyphicon-home"
-          %td= link_to "", new_plant_plant_task_path(plant), class: "glyphicon glyphicon-plus"
-        %td.col-md-1
-          %td= link_to "", plant_stage_of_growths_path(plant), class: "glyphicon glyphicon-home"
-          %td= link_to "", new_plant_stage_of_growth_path(plant), class: "glyphicon glyphicon-plus"
-        %td.col-md-1
-          %td= link_to "", plant_general_notes_path(plant), class: "glyphicon glyphicon-home"
-          %td= link_to "", new_plant_general_note_path(plant), class: "glyphicon glyphicon-plus"
-        %td.col-md-1= link_to "", plant_plant_images_path(plant), class: "glyphicon glyphicon-camera"
+        %td.text-center.col-md-2= link_to plant.strain_name, crop_plant_path(@crop, plant)
+        %td.text-center.col-md-1= plant.sex
+        %td.text-center.col-md-1= plant.from
+        %td.text-center.col-md-.5= link_to "", plant_plant_tasks_path(plant), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_plant_task_path(plant), class: "glyphicon glyphicon-plus"
+        %td.text-center.col-md-.5= link_to "", plant_stage_of_growths_path(plant), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_stage_of_growth_path(plant), class: "glyphicon glyphicon-plus"
+        %td.text-center.col-md-.5= link_to "", plant_general_notes_path(plant), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_general_note_path(plant), class: "glyphicon glyphicon-plus"
+        %td.text-center.col-md-.5= link_to "", plant_plant_images_path(plant), class: "glyphicon glyphicon-camera"
+        %td.text-center.col-md-.5= link_to "", new_plant_plant_image_path(plant), class: "glyphicon glyphicon-plus"

@@ -1,7 +1,12 @@
 class GardensController < ApplicationController
 
   def index
-    @gardens = Garden.all
+    @gardens =
+      if current_user
+        Garden.where(user_id: current_user.id)
+      else
+        []
+      end
   end
 
   def new
@@ -45,7 +50,7 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name)
+    params.require(:garden).permit(:name, :user_id)
   end
 
 end
