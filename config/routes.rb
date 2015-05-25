@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   end
 
   resources :plants do
-    resources :plant_tasks
+    resources :general_notes
+  end
+
+  resources :plants do
+    resources :sprayings
   end
 
   resources :plants do
@@ -34,13 +38,15 @@ Rails.application.routes.draw do
     resources :stage_of_growths
   end
 
+  resources :plants do
+    resources :plant_tasks
+  end
+
   resources :plant_tasks do
     resources :feedings
   end
 
-  resources :plants do
-    resources :general_notes
-  end
+
 
   get 'sign-up', to: 'registrations#new'
   post 'sign-up', to: 'registrations#create'
