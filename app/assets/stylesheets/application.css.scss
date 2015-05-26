@@ -17,6 +17,13 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ th:nth-of-type(n) { background: #18b016; }
+ td:nth-of-type(n) { background: #74e361; }
+
+ .curCol { -moz-box-shadow: 0 0 10px rgba(0,0,0,0.2); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2); z-index: 1; position: relative; }
+
+
+
  $bgDefault      : #18b016;
  $bgHighlight    : #74e361;
  $colDefault     : #ddd704;
