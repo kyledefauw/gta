@@ -1,6 +1,6 @@
 .page-header
   .pull-right
-    = link_to 'New plant', new_crop_plant_path(@crop), class: "btn btn-info"
+    = link_to 'Edit Crop', edit_garden_crop_path(@garden, @crop), class: "btn btn-success"
   %h2= @crop.name
 
 = link_to 'List of Plants', crop_plants_path(@crop)
