@@ -23,26 +23,29 @@ Rails.application.routes.draw do
   end
 
   resources :plants do
+    resources :plant_entries
+
+  resources :plant_entries do
     resources :general_notes
   end
 
-  resources :plants do
+  resources :plant_entries do
     resources :sprayings
   end
 
-  resources :plants do
+  resources :plant_entries do
     resources :plant_images
   end
 
-  resources :plants do
+  resources :plant_entries do
     resources :stage_of_growths
   end
 
-  resources :plants do
+  resources :plant_entries do
     resources :plant_tasks
   end
 
-  resources :plant_tasks do
+  resources :plant_entries do
     resources :feedings
   end
 

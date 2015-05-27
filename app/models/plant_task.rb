@@ -1,8 +1,6 @@
 class PlantTask < ActiveRecord::Base
 
-  belongs_to :plant
-  has_many :feedings, dependent: :destroy
+  belongs_to :plant_entry
 
-  accepts_nested_attributes_for :feedings, allow_destroy: true
 
 end
