@@ -1,5 +1,5 @@
 .page-header
-  = link_to "New Stage", new_plant_stage_of_growth_path, class: "btn btn-success pull-right"
+  = link_to "New Stage", new_plant_stage_of_growth_path(@plant), class: "btn btn-success pull-right"
   %h2 List of Plant Stages
 
 %table.table.striped
@@ -9,6 +9,7 @@
       %th Plant Date
       %th Pot Size
       %th Grow Medium
+      %th Nutrients Added
 
   %tbody
     - @stage_of_growths.each do |stage_of_growth|
@@ -16,3 +17,5 @@
         %td= link_to stage_of_growth.stage, plant_stage_of_growth_path(@plant, stage_of_growth)
         %td= stage_of_growth.plant_date.strftime("%a, %B %d, %Y, at %l:%M %p")
         %td= stage_of_growth.pot_size
+        %td= stage_of_growth.grow_medium
+        %td= stage_of_growth.nutrients_added
