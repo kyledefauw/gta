@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/veg_state', to: 'tips#veg_state'
   get '/soil', to: 'tips#soil'
   get '/hydroponics', to: 'tips#hydroponics'
-  get '/c02enrichment', to: 'tips#c02enrichment'
+  get '/co2enrichment', to: 'tips#co2enrichment'
 
 
   resources :users
