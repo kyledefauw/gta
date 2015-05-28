@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/veg_state', to: 'tips#veg_state'
   get '/soil', to: 'tips#soil'
   get '/hydroponics', to: 'tips#hydroponics'
+  get '/c02enrichment', to: 'tips#c02enrichment'
+
 
   resources :users
 
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
 
   resources :plants do
     resources :plant_entries
+  end
 
   resources :plant_entries do
     resources :general_notes
