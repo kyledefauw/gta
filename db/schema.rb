@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150527185355) do
     t.string   "nutrients_added"
     t.string   "ppm_level"
     t.string   "ph_level"
-    t.integer  "plant_task_id"
+    t.integer  "plant_entry_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -51,22 +51,23 @@ ActiveRecord::Schema.define(version: 20150527185355) do
 
   create_table "general_notes", force: :cascade do |t|
     t.text     "notes"
-    t.integer  "plant_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "plant_entry_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "plant_entries", force: :cascade do |t|
     t.datetime "entry_datetime"
+    t.integer  "plant_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
   create_table "plant_images", force: :cascade do |t|
     t.string   "plant_picture"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "plant_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "plant_entry_id"
   end
 
   create_table "plant_tasks", force: :cascade do |t|
@@ -74,9 +75,9 @@ ActiveRecord::Schema.define(version: 20150527185355) do
     t.boolean  "trimmed"
     t.boolean  "staked"
     t.boolean  "clipped"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "plant_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "plant_entry_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -90,7 +91,7 @@ ActiveRecord::Schema.define(version: 20150527185355) do
   create_table "sprayings", force: :cascade do |t|
     t.string   "water_amount"
     t.string   "chemicals_added"
-    t.integer  "plant_id"
+    t.integer  "plant_entry_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -100,7 +101,7 @@ ActiveRecord::Schema.define(version: 20150527185355) do
     t.datetime "plant_date"
     t.string   "pot_size"
     t.text     "grow_medium"
-    t.integer  "plant_id"
+    t.integer  "plant_entry_id"
     t.string   "nutrients_added"
   end
 

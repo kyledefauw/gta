@@ -1,8 +1,8 @@
 .page-header
-  = link_to "New Plant Task", new_plant_plant_task_path(@plant), class: "btn btn-success pull-right"
+  = link_to "New Plant Task", new_plant_entry_plant_task_path(@plant_entry), class: "btn btn-success pull-right"
   %h2 List of Recorded Plant Tasks
 
 - @plant_tasks.each do |plant_tasks|
 
-  = link_to plant_tasks.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_plant_task_path(@plant, plant_tasks)
+  = link_to plant_tasks.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_plant_task_path(@plant_entry, plant_tasks)
   %hr

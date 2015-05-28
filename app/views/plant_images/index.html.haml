@@ -1,8 +1,8 @@
 .page-header
-  = link_to "Upload New Image", new_plant_plant_image_path(@plant), class: "btn btn-success pull-right"
+  = link_to "Upload New Image", new_plant_entry_plant_image_path(@plant_entry), class: "btn btn-success pull-right"
   %h2 Gallery of Images
 
 - @plant_images.each do |plant_images|
 
-  = link_to image_tag(plant_images.plant_picture), plant_plant_image_path(@plant, plant_images)
+  = link_to image_tag(plant_images.plant_picture), plant_plant_image_path(@plant_entry, plant_images)
   %hr

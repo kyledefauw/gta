@@ -1,0 +1,125 @@
+= form_for [@plant, @plant_entry], html: {class: "form-horizontal"} do |e|
+  = render partial: "/shared/errors", locals:{object: @plant_entry}
+  .form-group
+    = e.label "Entry Date", class: "col-md-4 control-label"
+    .col-md-3
+      = e.date_field :entry_datetime, class: "form-control"
+  %table.col-md-12
+    %tr
+      %td
+        %center
+          %h3 Feedings
+          .well.col-md-offset-2.col-md-8
+            = e.fields_for :feeding do |f|
+              .form-group
+                = f.label :water_amount, class: "col-md-4 control-label"
+                .col-md-8
+                  = f.text_field :water_amount, class: "form-control"
+              .form-group
+                = f.label :nutrients_added, class: "col-md-4 control-label"
+                .col-md-8
+                  = f.text_field :nutrients_added, class: "form-control"
+              .form-group
+                = f.label :ppm_level, class: "col-md-4 control-label"
+                .col-md-8
+                  = f.text_field :ppm_level, class: "form-control"
+              .form-group
+                = f.label :ph_level, class: "col-md-4 control-label"
+                .col-md-8
+                  = f.text_field :ph_level, class: "form-control"
+
+      %td
+        %center
+          %h3 Tasks
+          .well.col-md-offset-2.col-md-8
+            = e.fields_for :plant_task do |t|
+              %br
+              .form-group
+                = t.label :topped, class: "col-md-4 control-label"
+                .col-md-8
+                  = t.check_box :topped, class: "form-control"
+              .form-group
+                = t.label :trimmed, class: "col-md-4 control-label"
+                .col-md-8
+                  = t.check_box :trimmed, class: "form-control"
+              .form-group
+                = t.label :staked, class: "col-md-4 control-label"
+                .col-md-8
+                  = t.check_box :staked, class: "form-control"
+              .form-group
+                = t.label :clipped, class: "col-md-4 control-label"
+                .col-md-8
+                  = t.check_box :clipped, class: "form-control"
+
+    %tr
+      %td
+        %center
+          %h3 Spray
+          .well.col-md-offset-2.col-md-8
+            = e.fields_for :spraying do |s|
+              %br
+              %br
+              .form-group
+                = s.label :water_amount, class: "col-md-4 control-label"
+                .col-md-8
+                  = s.text_field :water_amount, class: "form-control"
+              %br
+              %br
+              .form-group
+                = s.label :chemicals_added, class: "col-md-4 control-label"
+                .col-md-8
+                  = s.text_field :chemicals_added, class: "form-control"
+              %br
+              %br
+
+      %td
+        %center
+          %h3 Stage Of Growth
+          .well.col-md-offset-2.col-md-8
+            = e.fields_for :stage_of_growth do |g|
+              .form-group
+                = g.label :stage, class: "col-md-4 control-label"
+                .col-md-8
+                  = g.text_field :stage, class: "form-control"
+              .form-group
+                = g.label :plant_date, class: "col-md-4 control-label"
+                .col-md-8
+                  = g.date_field :plant_date, class: "form-control"
+              .form-group
+                = g.label :pot_size, class: "col-md-4 control-label"
+                .col-md-8
+                  = g.text_field :pot_size, class: "form-control"
+              .form-group
+                = g.label :grow_medium, class: "col-md-4 control-label"
+                .col-md-8
+                  = g.text_field :grow_medium, class: "form-control"
+              .form-group
+                = g.label :nutrients_added, class: "col-md-4 control-label"
+                .col-md-8
+                  = g.text_field :nutrients_added, class: "form-control"
+
+    %tr
+      %td
+        %center
+          %h3 Notes
+          .well.col-md-offset-2.col-md-8
+            = e.fields_for :general_note do |n|
+              .form-group
+                = n.label :notes, class: "col-md-4 control-label"
+                .col-md-8
+                  = n.text_area :notes, class: "form-control"
+
+      %td
+        %center
+          %h3 Picture
+          .well.col-md-offset-2.col-md-8
+            = e.fields_for :plant_image do |i|
+              %br
+              .form-group
+                = i.label :plant_picture, class: "col-md-4 control-label"
+                .col-md-8
+                  = i.file_field :plant_picture, class: "form-control"
+
+  .form-group
+    .col-md-offset-4.col-md-4
+      = e.submit class: "btn btn-success form-control"

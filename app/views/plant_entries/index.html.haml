@@ -1,0 +1,40 @@
+.page-header
+  = link_to "New Plant Entry", new_plant_plant_entry_path(@plant), class: "btn btn-success pull-right"
+  %h2 List of Plants Entries
+
+
+%table.table.striped
+  %thead
+    %tr
+      %th.text-center.col-md-1{:colspan => 2} Feedings
+      %th
+      %th.text-center.col-md-1{:colspan => 2} Sprayings
+      %th
+      %th.text-center.col-md-1{:colspan => 2} Plant Tasks
+      %th
+      %th.text-center.col-md-1{:colspan => 2} Stage Of Growth
+      %th
+      %th.text-center.col-md-1{:colspan => 2} Notes
+      %th
+      %th.text-center.col-md-1{:colspan => 2} Pictures
+
+  %tbody
+    - @plant_entries.each do |plant_entry|
+      %tr
+        %td.text-center.col-md-.5= link_to "", plant_entry_feedings_path(plant_entry), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_entry_feeding_path(plant_entry), class: "glyphicon glyphicon-plus"
+        %td
+        %td.text-center.col-md-.5= link_to "", plant_entry_sprayings_path(plant_entry), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_entry_spraying_path(plant_entry), class: "glyphicon glyphicon-plus"
+        %td
+        %td.text-center.col-md-.5= link_to "", plant_entry_plant_tasks_path(plant_entry), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_entry_plant_task_path(plant_entry), class: "glyphicon glyphicon-plus"
+        %td
+        %td.text-center.col-md-.5= link_to "", plant_entry_stage_of_growths_path(plant_entry), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_entry_stage_of_growth_path(plant_entry), class: "glyphicon glyphicon-plus"
+        %td
+        %td.text-center.col-md-.5= link_to "", plant_entry_general_notes_path(plant_entry), class: "glyphicon glyphicon-home"
+        %td.text-center.col-md-.5= link_to "", new_plant_entry_general_note_path(plant_entry), class: "glyphicon glyphicon-plus"
+        %td
+        %td.text-center.col-md-.5= link_to "", plant_entry_plant_images_path(plant_entry), class: "glyphicon glyphicon-camera"
+        %td.text-center.col-md-.5= link_to "", new_plant_entry_plant_image_path(plant_entry), class: "glyphicon glyphicon-plus"

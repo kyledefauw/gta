@@ -1,5 +1,5 @@
 .page-header
-  = link_to "New Note", new_plant_general_note_path, class: "btn btn-success pull-right"
+  = link_to "New Note", new_plant_entry_general_note_path(@plant_entry), class: "btn btn-success pull-right"
   %h2 List of Plant Notes
 
 %table.table.striped
@@ -10,4 +10,4 @@
   %tbody
     - @general_notes.each do |general_note|
       %tr
-        %td= link_to general_note.notes, plant_general_note_path(@plant, general_note)
+        %td= link_to general_note.notes, plant_general_note_path(@plant_entry, general_note)

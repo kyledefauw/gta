@@ -1,4 +1,4 @@
-= form_for [@plant, @plant_task], html: {class: "form-horizontal"} do |t|
+= form_for [@plant_entry, @plant_task], html: {class: "form-horizontal"} do |t|
   = render partial: "/shared/errors", locals:{object: @plant_task}
   .row
     .well.col-md-offset-2.col-md-8
@@ -18,39 +18,6 @@
         = t.label :clipped, class: "col-md-4 control-label"
         .col-md-8
           = t.check_box :clipped, class: "form-control"
-
-    .well.col-md-offset-2.col-md-8
-      = fields_for :feeding do |f|
-        .form-group
-          = f.label :water_amount, class: "col-md-4 control-label"
-          .col-md-8
-            = f.text_field :water_amount, class: "form-control"
-        .form-group
-          = f.label :nutrients_added, class: "col-md-4 control-label"
-          .col-md-8
-            = f.text_field :nutrients_added, class: "form-control"
-        .form-group
-          = f.label :ppm_level, class: "col-md-4 control-label"
-          .col-md-8
-            = f.text_field :ppm_level, class: "form-control"
-        .form-group
-          = f.label :ph_level, class: "col-md-4 control-label"
-          .col-md-8
-            = f.text_field :ph_level, class: "form-control"
-
-    .well.col-md-offset-2.col-md-8
-      = fields_for :general_notes do |g|
-        .form-group
-          = g.label "Notes", class: "col-md-4 control-label"
-          .col-md-8
-            = g.text_area :note, class: "form-control"
-
-    .well.col-md-offset-2.col-md-8
-      = fields_for :plant_image do |i|
-        .form-group
-          = i.label :plant_image, class: "col-md-4 control-label"
-          .col-md-8
-            = i.file_field :plant_image, class: "form-control"
 
   .form-group
     .col-md-offset-4.col-md-4

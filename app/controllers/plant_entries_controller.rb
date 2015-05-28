@@ -11,7 +11,7 @@ class PlantEntriesController < ApplicationController
   end
 
   def create
-    @plant_task = @plant.plant_entries.new(plant_entry_params)
+    @plant_entry = @plant.plant_entries.new(plant_entry_params)
     if @plant_entry.save
       flash[:notice] = 'Plant entries were successfully added'
       redirect_to plant_plant_entries_path

@@ -1,0 +1,13 @@
+.page-header
+  = link_to "New Spraying", new_plant_spraying_path(@plant_entry), class: "btn btn-success pull-right"
+  %h2 List of Plant Notes
+
+%table.table.striped
+  %thead
+    %tr
+      %th Note
+
+  %tbody
+    - @general_notes.each do |general_note|
+      %tr
+        %td= link_to general_note.notes, plant_general_note_path(@plant_entry, general_note)

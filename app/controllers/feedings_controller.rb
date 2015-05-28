@@ -52,7 +52,7 @@ class FeedingsController < ApplicationController
   end
 
   def find_and_set_feeding
-    @plant_entry = Plantentry.find(params[:plant_entry_id])
+    @plant_entry = PlantEntry.find(params[:plant_entry_id])
   end
 
 end
