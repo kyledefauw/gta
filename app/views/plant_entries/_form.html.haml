@@ -1,7 +1,7 @@
-= form_for [@plant, @plant_entry], html: {class: "form-horizontal"} do |e|
+= form_for [@plant, @plant_entry], html: {class: "form-horizontal", multipart: true} do |e|
   = render partial: "/shared/errors", locals:{object: @plant_entry}
   .form-group
-    = e.label "Entry Date", class: "col-md-4 control-label"
+    = e.label :entry_datetime, "Entry Date", class: "col-md-4 control-label"
     .col-md-3
       = e.date_field :entry_datetime, class: "form-control"
   %table.col-md-12

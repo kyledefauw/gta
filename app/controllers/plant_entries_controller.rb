@@ -8,12 +8,19 @@ class PlantEntriesController < ApplicationController
 
   def new
     @plant_entry = @plant.plant_entries.new
+    @plant_entry.plant_tasks.build
+    @plant_entry.feedings.build
+    @plant_entry.plant_tasks.build
+    @plant_entry.stage_of_growths.build
+    @plant_entry.plant_images.build
+    @plant_entry.sprayings.build
+    @plant_entry.general_notes.build
   end
 
   def create
     @plant_entry = @plant.plant_entries.new(plant_entry_params)
     if @plant_entry.save
-      flash[:notice] = 'Plant entries were successfully added'
+      flash[:notice] = 'Plant entry were successfully added'
       redirect_to plant_plant_entries_path
     else
       render :new
@@ -31,7 +38,7 @@ class PlantEntriesController < ApplicationController
   def update
     @plant_entry = @plant.plant_entries.find(params[:id])
     if @plant_entry.update(plant_entry_params)
-      flash[:notice] = 'Plant entries were successfully updated!'
+      flash[:notice] = 'Plant entry were successfully updated!'
       redirect_to plant_plant_entries_path
     else
       render :edit
@@ -48,7 +55,7 @@ class PlantEntriesController < ApplicationController
   private
 
   def plant_entry_params
-    params.require(:plant_entry).permit(:entry_datetime, :plant_id)
+    params.require(:plant_entry).permit(:entry_datetime, :plant_id, general_notes_attributes: [:id, :notes, :plant_entry_id])
   end
 
   def find_and_set_plant_entry
