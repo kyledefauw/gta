@@ -1,6 +1,5 @@
 class PlantEntry < ActiveRecord::Base
 
-
   belongs_to :plant
 
   has_many :plant_tasks, dependent: :destroy

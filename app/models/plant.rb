@@ -6,6 +6,5 @@ class Plant < ActiveRecord::Base
 
   has_many :plant_entries, dependent: :destroy
 
-  mount_uploader :plant_picture, ImageUploader
 
 end

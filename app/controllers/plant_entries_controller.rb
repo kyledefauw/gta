@@ -55,7 +55,7 @@ class PlantEntriesController < ApplicationController
   private
 
   def plant_entry_params
-    params.require(:plant_entry).permit(:entry_datetime, :plant_id, general_notes_attributes: [:id, :notes, :plant_entry_id])
+    params.require(:plant_entry).permit(:entry_datetime, :plant_id, general_notes: [:id, :notes, :plant_entry_id])
   end
 
   def find_and_set_plant_entry

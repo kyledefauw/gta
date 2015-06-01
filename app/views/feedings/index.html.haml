@@ -13,7 +13,7 @@
   %tbody
     - @feedings.each do |feeding|
       %tr
-        %td= link_to feeding.water_amount, plant_feeding_path(@plant_entry, feeding)
+        %td= link_to feeding.water_amount, plant_entry_feeding_path(@plant_entry, feeding)
         %td= feeding.nutrients_added
         %td= feeding.ppm_level
         %td= feeding.ph_level

@@ -10,4 +10,4 @@
   %tbody
     - @general_notes.each do |general_note|
       %tr
-        %td= link_to general_note.notes, plant_general_note_path(@plant_entry, general_note)
+        %td= link_to general_note.notes, plant_entry_general_note_path(@plant_entry, general_note)

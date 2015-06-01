@@ -4,5 +4,5 @@
 
 - @plant_tasks.each do |plant_tasks|
 
-  = link_to plant_tasks.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_plant_task_path(@plant_entry, plant_tasks)
+  = link_to plant_tasks.created_at.strftime("%a, %B %d, %Y, at %l:%M %p"), plant_entry_plant_task_path(@plant_entry, plant_tasks)
   %hr
