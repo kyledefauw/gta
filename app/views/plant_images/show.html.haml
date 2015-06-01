@@ -3,4 +3,4 @@
     =link_to "Edit", edit_plant_entry_plant_image_path(@plant_entry, @plant_image), class: "btn btn-info"
   %h2 Image
 
-= image_tag(@plant_image.plant_picture_url.to_s) if @plant_image.plant_picture?
+= image_tag(@plant_image.plant_picture.url) if @plant_image.plant_picture?

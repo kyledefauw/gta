@@ -13,7 +13,7 @@ class PlantImagesController < ApplicationController
   def create
     @plant_image = @plant_entry.plant_images.new(plant_image_params)
     if @plant_image.save
-      flash[:notice] = 'Plant images were successfully added'
+      flash[:notice] = 'Plant image was successfully added'
       redirect_to plant_entry_plant_images_path
     else
       render :new
@@ -33,7 +33,7 @@ class PlantImagesController < ApplicationController
   def update
     @plant_image = @plant_entry.plant_images.find(params[:id])
     if @plant_image.update(plant_image_params)
-      flash[:notice] = 'Plant images were successfully updated!'
+      flash[:notice] = 'Plant image were successfully updated!'
       redirect_to plant_entry_plant_images_path
     else
       render :edit
