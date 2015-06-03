@@ -1,5 +1,6 @@
 .page-header
-  %h2 Edit Stage of Growth
+  = link_to "Delete Feeding", plant_entry_feeding_path, method: :delete, class: "btn btn-danger pull-right", data: {confirm: 'Are you sure man?!'}
+  %h2 Edit Feeding
 
 %ol.breadcrumb
   %li=link_to "Garden", gardens_path

@@ -1,4 +1,5 @@
 .page-header
+  = link_to "Delete Note", plant_entry_general_note_path, method: :delete, class: "btn btn-danger pull-right", data: {confirm: 'Are you sure man?!'}
   %h2 Edit General Note
 
 = render "form"

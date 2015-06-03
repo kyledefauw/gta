@@ -1,4 +1,5 @@
 .page-header
+  = link_to "Delete Tasks", plant_entry_plant_task_path, method: :delete, class: "btn btn-danger pull-right", data: {confirm: 'Are you sure man?!'}
   %h2 Edit Plant Tasks
-  
+
 = render "form"

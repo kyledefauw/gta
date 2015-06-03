@@ -1,4 +1,5 @@
 .page-header
+  = link_to "Delete Stage Of Growth", plant_entry_stage_of_growth_path, method: :delete, class: "btn btn-danger pull-right", data: {confirm: 'Are you sure man?!'}
   %h2 Edit Stage of Growth
 
 = render "form"
