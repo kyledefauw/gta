@@ -2,6 +2,10 @@
   = link_to "New Garden", new_garden_path, class: "btn btn-success pull-right"
   %h2 List of Gardens
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+
 - @gardens.each do |garden|
   %h4= link_to garden.name, garden_path(garden)
   %dl

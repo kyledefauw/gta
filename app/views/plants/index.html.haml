@@ -2,6 +2,11 @@
   = link_to "New Plant", new_crop_plant_path(@crop), class: "btn btn-success pull-right"
   %h2 List of Plants
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  -# %li=link_to "Crops", garden_crops_path(@garden)
+  %li.active Plants
 
 %table.table.striped
   %thead

@@ -1,4 +1,10 @@
 .page-header
   %h2 New Crop
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  %li=link_to "Crops", garden_crops_path(@garden)
+  %li.active New Crop
+
 = render "form"

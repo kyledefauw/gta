@@ -3,6 +3,11 @@
     = link_to 'Edit Garden', edit_garden_path(@garden), class: "btn btn-info"
   %h2= @garden.name
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  %li.active= @garden.name
+
 .row
   .well.col-md-offset-3.col-md-6
     %table

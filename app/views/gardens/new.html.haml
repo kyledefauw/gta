@@ -1,4 +1,9 @@
 .page-header
   %h2 New Garden
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  %li.active New Garden
+
 = render "form"

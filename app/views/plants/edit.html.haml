@@ -1,4 +1,11 @@
 .page-header
   %h2 Edit Plant
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  -# %li=link_to "Crops", garden_crops_path(@garden)
+  %li=link_to "Plants", crop_plants_path(@crop)
+  %li.active Edit Plant
+
 = render "form"

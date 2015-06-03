@@ -1,6 +1,11 @@
 .page-header
   %h2 List of Crops
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  %li.active Crops
+
 - @crops.each do |crop|
 
   = link_to crop.name, garden_crop_path(@garden, crop)

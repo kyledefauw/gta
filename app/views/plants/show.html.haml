@@ -3,6 +3,12 @@
     =link_to "Edit", edit_crop_plant_path(@crop, @plant), class: "btn btn-info"
   %h2
     =@plant.strain_name
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  -# %li=link_to "Crops", garden_crops_path(@garden)
+  %li=link_to "Plants", crop_plants_path(@crop)
+  %li.active= @plant.strain_name
 
 %dl.dl-horizontal
   %dt Sex
@@ -10,6 +16,6 @@
   %dt From
   %dd= @plant.from
   %dt Stage Of Growth
-  %dd=link_to "Record Plant Tasks", plant_plant_tasks_path(@plant), class: "btn btn-success"
+  %dd=link_to "Record Plant Tasks", plant_entry_plant_tasks_path(@plant), class: "btn btn-success"
 
 -# = link_to "copy", copy_crop_plant_path(params[:id])

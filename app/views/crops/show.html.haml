@@ -3,4 +3,10 @@
     = link_to 'Edit Crop', edit_garden_crop_path(@garden, @crop), class: "btn btn-success"
   %h2= @crop.name
 
+%ol.breadcrumb
+  %li=link_to "Home", root_path
+  %li=link_to "Garden", gardens_path
+  %li=link_to "Crops", garden_crops_path(@garden)
+  %li.active= @crop.name
+
 = link_to 'List of Plants', crop_plants_path(@crop)
