@@ -1,3 +1,3 @@
-class GardenAndUsersController < ApplicationController
+class GardensUsersController < ApplicationController
 
 end

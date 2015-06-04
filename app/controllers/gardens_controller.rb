@@ -1,5 +1,7 @@
 class GardensController < ApplicationController
 
+  before_action :find_and_set_user
+  
   def index
     @gardens =
       if current_user
@@ -51,6 +53,10 @@ class GardensController < ApplicationController
 
   def garden_params
     params.require(:garden).permit(:name, :user_id)
+  end
+
+  def find_and_set_user
+    @user = User.find(params[:user_id])
   end
 
 end
