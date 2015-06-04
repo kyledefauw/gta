@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get '/co2enrichment', to: 'tips#co2enrichment'
   get '/training', to: 'tips#training'
 
-
-
   resources :users
 
   resources :gardens do

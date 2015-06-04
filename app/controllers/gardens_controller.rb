@@ -1,20 +1,22 @@
 class GardensController < ApplicationController
-  
+
+  before_action :find_and_set_garden
+
   def index
     @gardens =
       if current_user
-        Garden.where(user_id: current_user.id)
+        @user.gardens.where(user_id: current_user.id)
       else
         []
       end
   end
 
   def new
-    @garden = Garden.new
+    @garden = @user.gardens.new
   end
 
   def create
-    @garden = Garden.new(garden_params)
+    @garden = @user.gardens.new(garden_params)
     if @garden.save
       flash[:notice] = 'You successfully created a new garden!'
       redirect_to gardens_path
@@ -24,17 +26,17 @@ class GardensController < ApplicationController
   end
 
   def edit
-    @garden = Garden.find(params[:id])
+    @garden = @user.gardens.find(params[:id])
   end
 
   def show
-    @garden = Garden.find(params[:id])
+    @garden = @user.gardens.find(params[:id])
   end
 
   def update
-    @garden = Garden.find(params[:id])
+    @garden = @user.gardens.find(params[:id])
     if @garden.update(garden_params)
-      flash[:notice] = 'Garden successfully updated'
+      flash[:notice] = '@user.gardens successfully updated'
       redirect_to users_path
     else
       render :edit
@@ -42,7 +44,7 @@ class GardensController < ApplicationController
   end
 
   def destroy
-    garden = Garden.find(params[:id])
+    garden = @user.gardens.find(params[:id])
     garden.delete
     redirect_to gardens_path, notice: 'Garden deleted'
   end
@@ -51,6 +53,10 @@ class GardensController < ApplicationController
 
   def garden_params
     params.require(:garden).permit(:name, :user_id)
+  end
+
+  def find_and_set_garden
+    @user = User.find(session[:user_id])
   end
 
 end

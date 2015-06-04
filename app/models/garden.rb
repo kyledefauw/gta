@@ -3,6 +3,10 @@ class Garden < ActiveRecord::Base
 
   has_many :crops, dependent: :destroy
 
-  has_and_belongs_to_many :users
+  belongs_to :user
+
+  has_many :garden_workers
+  has_many :caretakers, through: :garden_workers
+
 
 end
