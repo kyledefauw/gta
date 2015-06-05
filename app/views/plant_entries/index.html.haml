@@ -25,22 +25,21 @@
       %th.text-center.col-md-1{:colspan => 2} Pictures
 
   %tbody
-    - @plant_entries.each do |plant_entry|
-      %tr
-        %td.text-center.col-md-.5= link_to "", plant_entry_feedings_path(plant_entry), class: "glyphicon glyphicon-home"
-        %td.text-center.col-md-.5= link_to "", new_plant_entry_feeding_path(plant_entry), class: "glyphicon glyphicon-plus"
-        %td
-        %td.text-center.col-md-.5= link_to "", plant_entry_sprayings_path(plant_entry), class: "glyphicon glyphicon-home"
-        %td.text-center.col-md-.5= link_to "", new_plant_entry_spraying_path(plant_entry), class: "glyphicon glyphicon-plus"
-        %td
-        %td.text-center.col-md-.5= link_to "", plant_entry_plant_tasks_path(plant_entry), class: "glyphicon glyphicon-home"
-        %td.text-center.col-md-.5= link_to "", new_plant_entry_plant_task_path(plant_entry), class: "glyphicon glyphicon-plus"
-        %td
-        %td.text-center.col-md-.5= link_to "", plant_entry_stage_of_growths_path(plant_entry), class: "glyphicon glyphicon-home"
-        %td.text-center.col-md-.5= link_to "", new_plant_entry_stage_of_growth_path(plant_entry), class: "glyphicon glyphicon-plus"
-        %td
-        %td.text-center.col-md-.5= link_to "", plant_entry_general_notes_path(plant_entry), class: "glyphicon glyphicon-home"
-        %td.text-center.col-md-.5= link_to "", new_plant_entry_general_note_path(plant_entry), class: "glyphicon glyphicon-plus"
-        %td
-        %td.text-center.col-md-.5= link_to "", plant_entry_plant_images_path(plant_entry), class: "glyphicon glyphicon-camera"
-        %td.text-center.col-md-.5= link_to "", new_plant_entry_plant_image_path(plant_entry), class: "glyphicon glyphicon-plus"
+    %tr
+      %td.text-center.col-md-.5= link_to "", plant_feedings_path(@plant), class: "glyphicon glyphicon-home"
+      %td.text-center.col-md-.5= link_to "", new_plant_feeding_path(@plant), class: "glyphicon glyphicon-plus"
+      %td
+      %td.text-center.col-md-.5= link_to "", plant_sprayings_path(@plant), class: "glyphicon glyphicon-home"
+      %td.text-center.col-md-.5= link_to "", new_plant_spraying_path(@plant), class: "glyphicon glyphicon-plus"
+      %td
+      %td.text-center.col-md-.5= link_to "", plant_plant_tasks_path(@plant), class: "glyphicon glyphicon-home"
+      %td.text-center.col-md-.5= link_to "", new_plant_plant_task_path(@plant), class: "glyphicon glyphicon-plus"
+      %td
+      %td.text-center.col-md-.5= link_to "", plant_stage_of_growths_path(@plant), class: "glyphicon glyphicon-home"
+      %td.text-center.col-md-.5= link_to "", new_plant_stage_of_growth_path(@plant), class: "glyphicon glyphicon-plus"
+      %td
+      %td.text-center.col-md-.5= link_to "", plant_general_notes_path(@plant), class: "glyphicon glyphicon-home"
+      %td.text-center.col-md-.5= link_to "", new_plant_general_note_path(@plant), class: "glyphicon glyphicon-plus"
+      %td
+      %td.text-center.col-md-.5= link_to "", plant_plant_images_path(@plant), class: "glyphicon glyphicon-camera"
+      %td.text-center.col-md-.5= link_to "", new_plant_plant_image_path(@plant), class: "glyphicon glyphicon-plus"

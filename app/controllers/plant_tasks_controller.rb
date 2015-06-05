@@ -1,17 +1,15 @@
 class PlantTasksController < ApplicationController
 
-  before_action :find_and_set_plant_task
-
   def index
-    @plant_tasks = @plant_entry.plant_tasks.all
+    @plant_tasks = PlantTasks.all
   end
 
   def new
-    @plant_task = @plant_entry.plant_tasks.new
+    @plant_task = PlantTask.new
   end
 
   def create
-    @plant_task = @plant_entry.plant_tasks.new(plant_task_params)
+    @plant_task = PlantTask.new(plant_task_params)
     if @plant_task.save
       flash[:notice] = 'Plant Tasks were successfully added'
       redirect_to plant_entry_plant_tasks_path
@@ -21,15 +19,15 @@ class PlantTasksController < ApplicationController
   end
 
   def edit
-    @plant_task = @plant_entry.plant_tasks.find(params[:id])
+    @plant_task = PlantTask.find(params[:id])
   end
 
   def show
-    @plant_task = @plant_entry.plant_tasks.find(params[:id])
+    @plant_task = PlantTask.find(params[:id])
   end
 
   def update
-    @plant_task = @plant_entry.plant_tasks.find(params[:id])
+    @plant_task = PlantTask.find(params[:id])
     if @plant_task.update(plant_task_params)
       flash[:notice] = 'Plant Tasks were successfully updated!'
       redirect_to plant_entry_plant_tasks_path
@@ -39,7 +37,7 @@ class PlantTasksController < ApplicationController
   end
 
   def destroy
-    plant_task = @plant_entry.plant_tasks.find(params[:id])
+    plant_task = PlantTask.find(params[:id])
     plant_task.destroy
     flash[:error] = "Plant Tasks was deleted"
     redirect_to plant_entry_plant_tasks_path
@@ -49,10 +47,6 @@ class PlantTasksController < ApplicationController
 
   def plant_task_params
     params.require(:plant_task).permit(:trimmed, :topped, :staked, :clipped, :plant_entry_id)
-  end
-
-  def find_and_set_plant_task
-    @plant_entry = PlantEntry.find(params[:plant_entry_id])
   end
 
 end

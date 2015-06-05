@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :gardens do
     resources :crops
+    resources :caretakers
   end
 
   resources :crops do
@@ -28,27 +29,27 @@ Rails.application.routes.draw do
     resources :plant_entries
   end
 
-  resources :plant_entries do
+  resources :plant do
     resources :general_notes
   end
 
-  resources :plant_entries do
+  resources :plant do
     resources :sprayings
   end
 
-  resources :plant_entries do
+  resources :plant do
     resources :plant_images
   end
 
-  resources :plant_entries do
+  resources :plant do
     resources :stage_of_growths
   end
 
-  resources :plant_entries do
+  resources :plant do
     resources :plant_tasks
   end
 
-  resources :plant_entries do
+  resources :plant do
     resources :feedings
   end
 

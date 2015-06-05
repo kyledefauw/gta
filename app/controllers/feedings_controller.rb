@@ -1,17 +1,15 @@
 class FeedingsController < ApplicationController
 
-  before_action :find_and_set_feeding
-
   def index
-    @feedings = @plant_entry.feedings.all
+    @feedings = Feedings.all
   end
 
   def new
-    @feeding = @plant_entry.feedings.new
+    @feeding = Feeding.new
   end
 
   def create
-    @feeding = @plant_entry.feedings.new(feeding_params)
+    @feeding = Feeding.new(feeding_params)
     if @feeding.save
       flash[:notice] = 'Feeding successfully added'
       redirect_to plant_entry_feedings_path
@@ -21,15 +19,15 @@ class FeedingsController < ApplicationController
   end
 
   def edit
-    @feeding = @plant_entry.feedings.find(params[:id])
+    @feeding = Feeding.find(params[:id])
   end
 
   def show
-    @feeding = @plant_entry.feedings.find(params[:id])
+    @feeding = Feeding.find(params[:id])
   end
 
   def update
-    @feeding = @plant_entry.feedings.find(params[:id])
+    @feeding = Feeding.find(params[:id])
     if @feeding.update(feeding_params)
       flash[:notice] = 'Feeding successfully updated!'
       redirect_to plant_entry_feedings_path
@@ -39,7 +37,7 @@ class FeedingsController < ApplicationController
   end
 
   def destroy
-    feeding = @plant_entry.feedings.find(params[:id])
+    feeding = Feeding.find(params[:id])
     feeding.destroy
     flash[:error] = "Feeding was deleted"
     redirect_to plant_entry_feedings_path
@@ -49,10 +47,6 @@ class FeedingsController < ApplicationController
 
   def feeding_params
     params.require(:feeding).permit(:water_amount, :nutrients_added, :ppm_level, :ph_level, :plant_entry_id)
-  end
-
-  def find_and_set_feeding
-    @plant_entry = PlantEntry.find(params[:plant_entry_id])
   end
 
 end

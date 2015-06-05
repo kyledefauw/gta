@@ -8,13 +8,13 @@ class PlantEntriesController < ApplicationController
 
   def new
     @plant_entry = @plant.plant_entries.new
-    @plant_entry.plant_tasks.build
-    @plant_entry.feedings.build
-    @plant_entry.plant_tasks.build
-    @plant_entry.stage_of_growths.build
-    @plant_entry.plant_images.build
-    @plant_entry.sprayings.build
-    @plant_entry.general_notes.build
+    GeneralNote.new(plant_entry_id: @plant_entry.id)
+    # @plant_entry.feedings.build
+    # @plant_entry.plant_tasks.build
+    # @plant_entry.stage_of_growths.build
+    # @plant_entry.plant_images.build
+    # @plant_entry.sprayings.build
+    # @plant_entry.general_notes.build
   end
 
   def create
